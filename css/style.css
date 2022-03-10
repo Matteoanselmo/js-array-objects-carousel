@@ -11,10 +11,20 @@ div.my-carousel-container{
 div.my-carousel-images{
     background-color: cadetblue;
     min-height: 540px;
+    height: 540px;
+    position: relative;
+}
+
+div.my-carousel-images > img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
 }
 
 div.my-thumbnails{
+    display: flex;
     background-color: violet;
+    height: 160px;
     min-height: 160px;
 }
 
@@ -51,4 +61,22 @@ div.my-next > span::after{
     font-weight: 900;
     content: "\f520";
     line-height: 30px;
+}
+
+/**************************** CUSTOM CSS ****************************/
+.my-thumbnails-img{
+    width: calc(100% / 4); 
+    display: flex;
+}
+.my-thumbnails-img > img{
+    width: 100%;
+}
+
+#my-img-description{
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    color: white;
+    flex-direction: column;
+    text-align: end;
 }

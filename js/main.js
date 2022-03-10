@@ -16,3 +16,78 @@ E se volessi un bottone per invertire la "direzione" del carosello?
 
  *
  */
+// const thumbnailsContainer =  document.getElementsByClassName( "div.my-thumbnails" );
+// for(let i = 0; i < 4; i++){
+    
+//     thumbnailsContainer.innerHTML +=`
+//     <div class="my-thumbnails-img">
+//         <img src="https://picsum.photos/200/300" alt="">
+//     </div>
+//     `;
+// }
+
+
+const myArray = [
+{
+    image : 'https://picsum.photos/1920/1080',
+    titolo : 'Random',
+    paragrafo : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat id quas cupiditate possimus eos ullam beatae nemo reprehenderit? Iusto blanditiis laboriosam nulla'
+},
+{
+    image : 'https://picsum.photos/1920/1080',
+    luogo : 'Randomissimo',
+    paragrafo : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat id quas cupiditate possimus eos ullam beatae nemo reprehenderit? Iusto blanditiis laboriosam nulla'
+},
+{
+    image : 'https://picsum.photos/1920/1080',
+    titolo : 'Grazie',
+    paragrafo : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat id quas cupiditate possimus eos ullam beatae nemo reprehenderit? Iusto blanditiis laboriosam nulla'
+},
+{
+    image : 'https://picsum.photos/1920/1080',
+    titolo : 'Graziella',
+    paragrafo : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat id quas cupiditate possimus eos ullam beatae nemo reprehenderit? Iusto blanditiis laboriosam nulla'
+},
+
+];
+
+const carousellImgWrapper = document.getElementsByClassName('my-carousel-images');
+console.log(carousellImgWrapper[0]);
+
+const thumbnailsContainer =  document.getElementsByClassName('my-thumbnails');
+console.log(thumbnailsContainer[0]);
+
+for(let i = 0; i < myArray.length; i++ ){
+
+    console.log(myArray[i]['image']);
+    console.log(myArray[i]['titolo']);
+    console.log(myArray[i]['paragrafo']);
+
+    thumbnailsContainer[0].innerHTML +=`
+        <div class="my-thumbnails-img">
+            <img src="${myArray[i]['image']}" alt="">
+        </div>
+        
+    `;
+    carousellImgWrapper[0].innerHTML = `
+        <img src="${myArray[i]['image']}" alt="">
+        <div id="my-img-description">
+            <h5>${myArray[i]['titolo']}</h5>
+            <p>${myArray[i]['paragrafo']}</p>
+        </div>
+    `;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
