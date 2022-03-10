@@ -16,15 +16,7 @@ E se volessi un bottone per invertire la "direzione" del carosello?
 
  *
  */
-// const thumbnailsContainer =  document.getElementsByClassName( "div.my-thumbnails" );
-// for(let i = 0; i < 4; i++){
-    
-//     thumbnailsContainer.innerHTML +=`
-//     <div class="my-thumbnails-img">
-//         <img src="https://picsum.photos/200/300" alt="">
-//     </div>
-//     `;
-// }
+
 
 
 const myArray = [
@@ -51,38 +43,50 @@ const myArray = [
 
 ];
 
-const carousellImgWrapper = document.getElementsByClassName('my-carousel-images');
-console.log(carousellImgWrapper[0]);
+// const carousellImgWrapper = document.getElementsByClassName('my-carousel-images');
 
-const thumbnailsContainer =  document.getElementsByClassName('my-thumbnails');
-console.log(thumbnailsContainer[0]);
+// const thumbnailsContainer =  document.getElementsByClassName('my-thumbnails');
+// console.log(thumbnailsContainer[0]);
 
+
+let carouselContent ='';
+let carouselImgList = '';
 for(let i = 0; i < myArray.length; i++ ){
 
     console.log(myArray[i]['image']);
     console.log(myArray[i]['titolo']);
     console.log(myArray[i]['paragrafo']);
 
-    thumbnailsContainer[0].innerHTML +=`
-        <div class="my-thumbnails-img">
-            <img src="${myArray[i]['image']}" alt="">
+    carouselImgList +=`
+        <div class="my-thumbnails-img my-brightness">
+            <img  src="${myArray[i]['image']}" alt="">
         </div>
         
     `;
-    carousellImgWrapper[0].innerHTML = `
-        <img src="${myArray[i]['image']}" alt="">
+    carouselContent += `
+    <div class="carousel-element">
+        <img src="${myArray[i]['image']}" alt="">   
         <div id="my-img-description">
             <h5>${myArray[i]['titolo']}</h5>
             <p>${myArray[i]['paragrafo']}</p>
         </div>
+    </div>
+        
     `;
 }
 
+const carousellImgWrapper = document.querySelector('div.my-carousel-images');
+carousellImgWrapper.innerHTML += carouselContent;
 
+const carouselElement = document.getElementsByClassName('carousel-element');
+carouselElement[0].classList.add('active');
 
+const thumbnailsWrapper = document.querySelector('div.my-thumbnails');
+thumbnailsWrapper.innerHTML +=carouselImgList;
 
-
-
+const imagesThumbnails = document.getElementsByClassName('my-thumbnails-img');
+imagesThumbnails[0].classList.add('my-padding-carousel');
+imagesThumbnails[0].classList.remove('my-brightness');
 
 
 

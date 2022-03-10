@@ -5,7 +5,6 @@ body{
 div.my-carousel-container{
     min-height: 700px;
     min-width:800px ;
-    background-color: aquamarine;
 }
 
 div.my-carousel-images{
@@ -23,7 +22,7 @@ div.my-carousel-images > img{
 
 div.my-thumbnails{
     display: flex;
-    background-color: violet;
+    background-color: lightslategray;
     height: 160px;
     min-height: 160px;
 }
@@ -67,7 +66,9 @@ div.my-next > span::after{
 .my-thumbnails-img{
     width: calc(100% / 4); 
     display: flex;
+
 }
+.carousel-element > img,
 .my-thumbnails-img > img{
     width: 100%;
 }
@@ -79,4 +80,17 @@ div.my-next > span::after{
     color: white;
     flex-direction: column;
     text-align: end;
+}
+.carousel-element{
+    display: none;
+}
+.active{
+    display: block;
+}
+
+.my-padding-carousel{
+    padding: 3px;
+}
+.my-brightness{
+    filter: brightness(.4);
 }
